@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dcs', function () {
+    return 'Hello DevCode Factory';
+});
+
+Route::redirect('/youtube', '/dcs');
+
+Route::fallback(function () {
+    return '404 By DevCode Factory';
+});
