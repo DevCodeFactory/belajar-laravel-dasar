@@ -26,3 +26,11 @@ Route::redirect('/youtube', '/dcs');
 Route::fallback(function () {
     return '404 By DevCode Factory';
 });
+
+Route::view('/hello', 'hello', ['name' => 'Fahmi']);
+
+Route::get('/hello-again', function () {
+    return view('hello', ['name' => 'Fahmi']);
+});
+
+Route::view('/hello-world', 'hello.world', ['name' => 'Fahmi']);
